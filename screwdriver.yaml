@@ -1,0 +1,15 @@
+annotations:
+  screwdriver.cd/chainPR: true
+
+shared:
+  image: node:12
+  steps:
+    - echo: echo hi
+    
+jobs:
+  main:
+    requires: [~commit, ~pr]
+  internal_fork:
+    requires: [main]
+  join_job:
+    requires: [internal_fork, sd@21:external_fork, sd@22:external_fork]
