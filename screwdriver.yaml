@@ -12,4 +12,4 @@ jobs:
   internal_fork:
     requires: [main]
   join_job:
-    requires: [internal_fork, sd@21:external_fork, sd@22:external_fork]
+    requires: [internal_fork, sd@4810:external_fork, sd@4811:external_fork]
